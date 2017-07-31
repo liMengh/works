@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    function SuperType() {
+        this.property = true;
+    }
+    SuperType.prototype.getSuperValue = function () {
+        return this.property;
+    };
+    function SubType() {
+        this.subproperty = false;
+    }
+    subproperty = new SuperType();
+    //给子类添加新方法
+    SubType.prototype.getSubValue = function () {
+        return subproperty;
+    }
+    SubType.prototype.getSuperValue = function () {
+        return false;
+    }
+    var instance = new SubType();
+    console.log(instance.getSuperValue());
+</script>
+</html>
